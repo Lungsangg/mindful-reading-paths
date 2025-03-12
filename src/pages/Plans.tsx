@@ -7,7 +7,7 @@ import PlanCard from "@/components/PlanCard";
 import { getAllPlans, getPlansByCategory, searchPlans, Plan } from "@/data/plans";
 import { Link } from "react-router-dom";
 
-const Index = () => {
+const Plans = () => {
   const [filteredPlans, setFilteredPlans] = useState<Plan[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
@@ -49,28 +49,31 @@ const Index = () => {
     <div className="flex min-h-screen flex-col">
       <Header />
       
-      {/* Hero section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl flex flex-col items-center">
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl font-medium tracking-tight sm:text-5xl text-foreground mb-6 animate-slide-down">
-            Discover Daily <span className="text-gold">Mindful</span> Reading Plans
-          </h1>
-          <p className="text-lg text-muted-foreground mb-8 animate-slide-up">
-            Explore our curated collection of Buddhist reading plans to cultivate mindfulness, wisdom, and compassion in your daily life.
-          </p>
+      {/* Page header */}
+      <section className="pt-32 pb-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div>
+            <h1 className="text-3xl font-medium tracking-tight text-foreground mb-2 animate-slide-down">
+              All Reading Plans
+            </h1>
+            <p className="text-muted-foreground mb-4 md:mb-0 animate-slide-up">
+              Browse our entire collection of mindful reading plans
+            </p>
+          </div>
           
           {/* Search bar */}
-          <div className="max-w-xl mx-auto animate-fade-in">
+          <div className="w-full md:w-64 lg:w-80 animate-fade-in">
             <SearchBar 
               onSearch={setSearchQuery} 
               className="w-full"
+              placeholder="Search all plans..."
             />
           </div>
         </div>
       </section>
       
       {/* Categories section */}
-      <section id="categories" className="py-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
+      <section className="py-4 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl">
         <CategoryFilter 
           onSelectCategory={setSelectedCategory}
           selectedCategory={selectedCategory}
@@ -78,22 +81,7 @@ const Index = () => {
       </section>
       
       {/* Plans section */}
-      <section id="plans" className="py-8 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl flex-grow">
-        <div className="mb-8 flex justify-between items-center">
-          <h2 className="text-2xl font-medium">
-            {selectedCategory 
-              ? `${selectedCategory.charAt(0).toUpperCase() + selectedCategory.slice(1)} Plans` 
-              : 'Featured Plans'}
-          </h2>
-          
-          <Link 
-            to="/plans" 
-            className="text-gold hover:text-gold-dark transition-colors text-sm font-medium"
-          >
-            View all plans
-          </Link>
-        </div>
-        
+      <section className="py-4 px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl flex-grow">
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[1, 2, 3, 4, 5, 6].map((i) => (
@@ -152,4 +140,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Plans;
