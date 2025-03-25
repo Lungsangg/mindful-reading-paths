@@ -9,7 +9,7 @@
 /* Page header */
 .page-header {
   padding-top: 8rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem; /* Reduced padding bottom */
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: auto;
@@ -38,18 +38,6 @@
   animation: slide-down 0.5s ease-out;
 }
 
-.page-subtitle {
-  color: #666;
-  margin-bottom: 1rem;
-  animation: slide-up 0.5s ease-out;
-}
-
-@media (min-width: 768px) {
-  .page-subtitle {
-    margin-bottom: 0;
-  }
-}
-
 .search-container {
   width: 100%;
   animation: fade-in 0.6s ease-out;
@@ -63,7 +51,10 @@
 
 /* Categories section */
 .categories-section {
-  padding: 1rem;
+  padding-top: 0.5rem; /* Reduced padding top */
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
   max-width: 80rem;

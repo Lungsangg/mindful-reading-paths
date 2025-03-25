@@ -57,9 +57,6 @@ const Plans = () => {
             <h1 className="page-title">
               All Reading Plans
             </h1>
-            <p className="page-subtitle">
-              Browse our entire collection of mindful reading plans
-            </p>
           </div>
           
           {/* Search bar */}
