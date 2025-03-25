@@ -52,7 +52,8 @@ const App = () => (
         <ScrollToTop />
         <PageTransition>
           <Routes>
-            <Route path="/" element={<Index />} />
+            <Route path="/" element={<Plans />} />
+            <Route path="/home" element={<Index />} />
             <Route path="/plans" element={<Plans />} />
             <Route path="/plan/:planId" element={<PlanDetail />} />
             <Route path="/plan/:planId/read" element={<PlanProgression />} />
